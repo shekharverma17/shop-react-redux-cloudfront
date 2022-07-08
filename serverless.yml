@@ -8,6 +8,7 @@ provider:
   # setup profile for AWS CLI.
   # profile: node-aws
 
+
 plugins:
   - serverless-finch
   # 'serverless-single-page-app-plugin' is a custom plugin that located .serverless_plugins folder.

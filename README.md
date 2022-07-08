@@ -1,8 +1,9 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## AWS CloudFront
-CloudFront URL: http://node-in-aws-web-bucket-sv.s3-website-us-east-1.amazonaws.com/
-Distribution domain name: d29gacc03m5bau.cloudfront.net
+## AWS CloudFront and S3
+S3-website URL: http://node-in-aws-web-bucket-sv.s3-website-us-east-1.amazonaws.com/
+
+Distribution domain name: http://d29gacc03m5bau.cloudfront.net/
 
 ## Available Scripts
 
