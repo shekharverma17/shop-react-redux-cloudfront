@@ -8,7 +8,6 @@ provider:
   # setup profile for AWS CLI.
   # profile: node-aws
 
-
 plugins:
   - serverless-finch
   # 'serverless-single-page-app-plugin' is a custom plugin that located .serverless_plugins folder.
@@ -18,7 +17,7 @@ plugins:
 
 custom:
   client:
-    bucketName: node-in-aws-web-bucket-sv
+    bucketName: node-in-aws-web-bucket-sv-task2
     distributionFolder: build
   s3BucketName: ${self:custom.client.bucketName}
 

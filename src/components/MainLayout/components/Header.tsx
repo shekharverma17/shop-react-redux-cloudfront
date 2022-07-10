@@ -46,7 +46,7 @@ export default function Header() {
     <AppBar position="relative">
       <Toolbar>
         <Typography variant="h6" className={classes.title}>
-        <Link className={classes.homeLink} to="/">Serverless Cloud Basket!</Link><span style={{ fontSize: 'small', fontWeight: 300, display: 'block', color: 'yellow'}}>One place for all needs.</span>
+        <Link className={classes.homeLink} to="/">Serverless Cloud Shop!</Link><span style={{ fontSize: 'small', fontWeight: 300, display: 'block', color: 'yellow'}}>One place for all needs!</span>
         
         </Typography>
 
