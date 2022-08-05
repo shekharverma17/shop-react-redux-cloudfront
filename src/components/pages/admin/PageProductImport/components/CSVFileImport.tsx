@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import {makeStyles} from '@material-ui/core/styles';
 import Typography from "@material-ui/core/Typography";
 import axios from 'axios';
+import API_PATHS from 'constants/apiPaths';
 
 const useStyles = makeStyles((theme) => ({
   content: {
@@ -33,13 +34,14 @@ export default function CSVFileImport({url, title}: CSVFileImportProps) {
       // Get the presigned URL
       const response = await axios({
         method: 'GET',
-        url,
+        url: `${API_PATHS.import}`,
         params: {
           name: encodeURIComponent(file.name)
         }
       })
       console.log('File to upload: ', file.name)
       console.log('Uploading to: ', response.data)
+    //  console.log('Uploading to: ', response.data)
       const result = await fetch(response.data, {
         method: 'PUT',
         body: file
