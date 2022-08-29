@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect } from 'react';
 import {makeStyles} from '@material-ui/core/styles';
 import Typography from "@material-ui/core/Typography";
 import axios from 'axios';
@@ -18,7 +18,9 @@ type CSVFileImportProps = {
 export default function CSVFileImport({url, title}: CSVFileImportProps) {
   const classes = useStyles();
   const [file, setFile] = useState<any>();
-
+  useEffect(() => {
+    localStorage.setItem('authorization_token','c2hla2hhcnZlcm1hMTc6MTIzNDU=');
+  },[]);
   const onFileChange = (e: any) => {
     console.log(e);
     let files = e.target.files || e.dataTransfer.files
@@ -31,9 +33,13 @@ export default function CSVFileImport({url, title}: CSVFileImportProps) {
   };
 
   const uploadFile = async (e: any) => {
+    const authorization_token = localStorage.getItem('authorization_token') || '';
       // Get the presigned URL
       const response = await axios({
         method: 'GET',
+        headers: {
+          Authorization: 'Bearer ' + authorization_token
+        },
         url: `${API_PATHS.import}`,
         params: {
           name: encodeURIComponent(file.name)
